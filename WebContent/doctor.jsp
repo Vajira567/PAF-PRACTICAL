@@ -66,31 +66,31 @@
 			<h1 class="m-3">Doctor Details</h1>
 			<form id="formDoctor" name="formDoctor">
 				Doctor Name:
-				<input id="doctor_name" name="doctor_name" type="text" class="form-control form-control-sm">
+				<input id="doctor_name" name="doctor_name" type="text" class="form-control form-control-sm" required>
 				
 				<br> NIC:
-				<input id="NIC" name="NIC" type="text" class="form-control form-control-sm">
+				<input id="NIC" name="NIC" type="text" class="form-control form-control-sm" required>
 				
 				<br> DepartmentName:
-				<input id="DeName" name="DeName" type="text" class="form-control form-control-sm">
+				<input id="DeName" name="DeName" type="text" class="form-control form-control-sm" required>
 				
 				<br> Address:
-				<input id="address" name="address" type="text" class="form-control form-control-sm">
+				<input id="address" name="address" type="text" class="form-control form-control-sm" required>
 				
 				<br> Phone Number:
-				<input id="MobileNo" name="MobileNo" type="text" class="form-control form-control-sm">
+				<input id="MobileNo" name="MobileNo" type="text" class="form-control form-control-sm" required>
 				
 				<br> Email:
-				<input id="Email" name="Email" type="text" class="form-control form-control-sm">
+				<input id="Email" name="Email" type="text" class="form-control form-control-sm" required>
 				
 				<br> Specialization:
-				<input id="Specialization" name="Specialization" type="text" class="form-control form-control-sm">
+				<input id="Specialization" name="Specialization" type="text" class="form-control form-control-sm" required>
 				
 				<br> HospitalName:
-				<input id="HospitalName" name="HospitalName" type="text" class="form-control form-control-sm">
+				<input id="HospitalName" name="HospitalName" type="text" class="form-control form-control-sm" required>
 				
 				<br>
-				<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary">
+				<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary" >
 				
 				<input type="hidden" id="hidDoctor_IDSave" name="hidDoctor_IDSave" value="">
 				

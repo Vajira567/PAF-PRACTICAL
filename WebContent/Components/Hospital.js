@@ -90,9 +90,9 @@ $(document).on("click", ".btnRemove", function(event)
 {
     $.ajax(
         {
-            url : "UsersAPI",
+            url : "hospitalAPI",
             type : "DELETE",
-            data : "UserID=" + $(this).data("userid"),
+            data : "DoctorID=" + $(this).data("DoctorID"),
             dataType : "text",
             complete : function(response, status)
             {

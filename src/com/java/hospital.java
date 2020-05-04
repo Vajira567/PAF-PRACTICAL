@@ -26,7 +26,6 @@ public class hospital {
 
 			// Prepare the html table to be displayed   
 				output = "<table border=\"1\"><tr>"
-						+ "<th>Hospital_ID</th>" 
 						+ "<th>Hospital_Name</th>"
 						+ "<th>Hospital_Address</th>"
 						+ "<th>Hospital_City</th>"
@@ -53,10 +52,11 @@ public class hospital {
 				  String Open_Hours = Integer.toString(rs.getInt("Open_Hours"));  
 
 			   // Add into the html table    
-				  output += "<tr><td><input id=\"hidHospitalIDUpdate\"name=\"hidHospitalIDUpdate\"type=\"hidden\" value=\""
-							+ Hospital_ID + "\">" +  "</td>";
-			  
-			  output += "<tr>" + Hospital_Name + "</td>";    
+				//  output += "<tr><td><input id=\"hidHospitalIDUpdate\"name=\"hidHospitalIDUpdate\"type=\"hidden\" value=\""
+				//			+ Hospital_ID + "\">" +  "</td>";
+				  
+			  output += "<tr><td><input id='hidHospitalIDUpdate' name='hidHospitalIDUpdate' type='hidden' value='" + Hospital_ID + "'></td>";
+			  output += "<tr><td>" + Hospital_Name + "</td>";       
 			  output += "<td>" + Hospital_Address + "</td>";
 			  output += "<td>" + Hospital_City + "</td>";    
 			  output += "<td>" + Hospital_Phone + "</td>"; 
@@ -93,7 +93,7 @@ public class hospital {
 
 			return output;
 		}	
-		public String insertHospital(String id,String name, String address, String city, String phone, String email, String desc, String hours) {
+		public String insertHospital(String name, String address, String city, String phone, String email, String desc, String hours) {
 			String output = "";
 
 			try {
@@ -104,7 +104,7 @@ public class hospital {
 				}
 
 				// create a prepared statement   
-				String query = " insert into hospitals (`Hospital_ID`,`Hospital_Name`,`Hospital_Address`,`Hospital_City`,`Hospital_Phone`,`Hospital_Email`,`Hospital_Description`,`Open_Hours`)"+" values (?, ?, ?, ?, ?, ?, ?, ?)";
+				String query = " insert into hospitals (`Hospital_Name`,`Hospital_Address`,`Hospital_City`,`Hospital_Phone`,`Hospital_Email`,`Hospital_Description`,`Open_Hours`)"+" values (?, ?, ?, ?, ?, ?, ?, ?)";
 
 				PreparedStatement preparedStmt = con.prepareStatement(query);
 
@@ -149,6 +149,7 @@ public class hospital {
 		   PreparedStatement preparedStmt = con.prepareStatement(query); 
 		 
 		   // binding values    
+		   preparedStmt.setInt(1, 0); 
 		   preparedStmt.setString(1, name);    
 		   preparedStmt.setString(2, address);    
 		   preparedStmt.setString(3, city);
