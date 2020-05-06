@@ -52,8 +52,7 @@ public class hospital {
 				  String Open_Hours = Integer.toString(rs.getInt("Open_Hours"));  
 
 			   // Add into the html table    
-				//  output += "<tr><td><input id=\"hidHospitalIDUpdate\"name=\"hidHospitalIDUpdate\"type=\"hidden\" value=\""
-				//			+ Hospital_ID + "\">" +  "</td>";
+				
 				  
 			  output += "<tr><td><input id='hidHospitalIDUpdate' name='hidHospitalIDUpdate' type='hidden' value='" + Hospital_ID + "'></td>";
 			  output += "<tr><td>" + Hospital_Name + "</td>";       
@@ -93,7 +92,7 @@ public class hospital {
 
 			return output;
 		}	
-		public String insertHospital(String name, String address, String city, String phone, String email, String desc, String hours) {
+		public String insertHospital(String hos_id,String name, String address, String city, String phone, String email, String desc, String hours) {
 			String output = "";
 
 			try {
@@ -104,7 +103,7 @@ public class hospital {
 				}
 
 				// create a prepared statement   
-				String query = " insert into hospitals (`Hospital_Name`,`Hospital_Address`,`Hospital_City`,`Hospital_Phone`,`Hospital_Email`,`Hospital_Description`,`Open_Hours`)"+" values (?, ?, ?, ?, ?, ?, ?, ?)";
+				String query = " insert into hospitals ('Hospital_ID',`Hospital_Name`,`Hospital_Address`,`Hospital_City`,`Hospital_Phone`,`Hospital_Email`,`Hospital_Description`,`Open_Hours`)"+" values (?, ?, ?, ?, ?, ?, ?, ?)";
 
 				PreparedStatement preparedStmt = con.prepareStatement(query);
 

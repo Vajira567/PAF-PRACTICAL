@@ -16,7 +16,7 @@ connect DbObj = new connect();
 	
 	
 		
-		public String insertPayment(int p_id,String p_type, Double p_amount, int appointment_id) {
+		public String insertPayment( String p_id,String p_type, String p_amount, String appointment_id) {
 			
 			String output = "";
 
@@ -36,8 +36,8 @@ connect DbObj = new connect();
 				// binding values 
 				preparedStmt.setInt(1, 0);   
 				preparedStmt.setString(2, p_type);   
-				preparedStmt.setDouble(3, p_amount);    
-				preparedStmt.setInt(4 ,appointment_id);
+				preparedStmt.setInt(3, Integer.parseInt(p_amount));    
+				preparedStmt.setInt(4 ,Integer.parseInt(appointment_id));
 				
 				
 
@@ -89,6 +89,7 @@ connect DbObj = new connect();
 						 
 
 					   // Add into the html table    
+					  output += "<tr><td><input id='hidPaymentIDUpdate' name='hidPaymentIDUpdate' type='hidden' value='" + paymentID + "'></td>";  
 					  output += "<tr><td>" + paymentID + "</td>";    
 					  output += "<td>" + paymentType+ "</td>";
 					  output += "<td>" + paymentAmount + "</td>";    
@@ -97,14 +98,14 @@ connect DbObj = new connect();
 					  
 
 //					   // buttons    
-			 		  output += "<td><input name=\"btnUpdate\" "     + " "
-					  		+ "type=\"button\" value=\"Update\"></td>"     + ""
-					  				+ "<td><form method=\"post\" action=\"payment.jsp\">"     + ""
-					  						+ "<input name=\"btnRemove\" "     + " "
-					  								+ "type=\"submit\" value=\"Remove\">"     + ""
-					  										+ "<input name=\"paymentID\" type=\"hidden\" "     + " "
-					  												+ "value=\"" + 
-					  												paymentID + "\">" + "</form></td></tr>";   
+					  output += "<td><input name=\"btnUpdate\" "     + " "
+						  		+ "type=\"button\" value=\"Update\" class='btnUpdate btn btn-secondary'></td>"     + ""
+						  				+ "<td><form method=\"post\" action=\"payment.jsp\">"     + ""
+						  						+ "<input name=\"btnRemove\" "     + " "
+						  								+ "type=\"submit\" value=\"Remove\" class='btnRemove btn btn-danger'>"     + ""
+						  										+ "<input name=\"hidPaymentIDDelete\" type=\"hidden\" "     + " "
+						  												+ "value=\"" + 
+						  												paymentID + "\">" + "</form></td></tr>";   
 					  } 
 
 					  con.close(); 

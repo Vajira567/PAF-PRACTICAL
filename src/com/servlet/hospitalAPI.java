@@ -33,6 +33,7 @@ public class hospitalAPI extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String output = hospitalObj.insertHospital(
+				request.getParameter("Hospital_ID"),
 				request.getParameter("Hospital_Name"),
 				request.getParameter("Hospital_Address"), 
 				request.getParameter("Hospital_City"),

@@ -21,7 +21,7 @@ public class admin {
 	
    
 
-	public String insertAdmin(int id,String name, String gender, String address, String password,String phone, String email) {
+	public String insertAdmin(String id,String name, String gender, String address, String password,String phone, String email) {
 		String output = "";
 
 		try {
@@ -99,8 +99,10 @@ public class admin {
 			  String Admin_Email = rs.getString("Admin_Email");
 			 
 
-		   // Add into the html table    
-		  output += "<tr><td>" + Admin_ID + "</td>";    
+		   // Add into the html table  
+			
+		  output += "<tr><td><input id='hidAdminIDUpdate' name='hidAdminIDUpdate' type='hidden' value='" + Admin_ID + "'></td>";  
+          output += "<tr><td>" + Admin_ID + "</td>";    
 		  output += "<td>" + Admin_Name+ "</td>";
 		  output += "<td>" + Admin_Gender + "</td>";    
 		  output += "<td>" + Admin_Address + "</td>"; 
@@ -110,16 +112,16 @@ public class admin {
 		  
 
 //		   // buttons    
- 		  output += "<td><input name=\"btnUpdate\" "     + " "
-		  		+ "type=\"button\" value=\"Update\"></td>"     + ""
-		  				+ "<td><form method=\"post\" action=\"admin.jsp\">"     + ""
-		  						+ "<input name=\"btnRemove\" "     + " "
-		  								+ "type=\"submit\" value=\"Remove\">"     + ""
-		  										+ "<input name=\"DoctorID\" type=\"hidden\" "     + " "
-		  												+ "value=\"" + 
-		  												Admin_ID + "\">" + "</form></td></tr>";   
-		  } 
 
+		  output += "<td><input name=\"btnUpdate\" "     + " "
+			  		+ "type=\"button\" value=\"Update\" class='btnUpdate btn btn-secondary'></td>"     + ""
+			  				+ "<td><form method=\"post\" action=\"admin.jsp\">"     + ""
+			  						+ "<input name=\"btnRemove\" "     + " "
+			  								+ "type=\"submit\" value=\"Remove\" class='btnRemove btn btn-danger'>"     + ""
+			  										+ "<input name=\"hidAdminIDDelete\" type=\"hidden\" "     + " "
+			  												+ "value=\"" + 
+			  												Admin_ID + "\">" + "</form></td></tr>";   
+		  } 
 		  con.close(); 
 
 		  // Complete the html table   
@@ -135,7 +137,7 @@ public class admin {
 					
 
 	
-	public String updateAdmins(int admin_id, String name, String gender, String address, String password,String phone, String email)  {   
+	public String updateAdmins(String admin_id, String name, String gender, String address, String password,String phone, String email)  {   
 		String output = ""; 
 	 
 	  try   {   
@@ -153,8 +155,7 @@ public class admin {
 	 
 	   // binding values    
 	    preparedStmt.setInt(1, 0);   
-		preparedStmt.setString(2, name);   
-		preparedStmt.setString(2, name);   
+	    preparedStmt.setString(2, name);   
 		preparedStmt.setString(3, gender);    
 		preparedStmt.setString(4, address);
 		preparedStmt.setString(5,  password);

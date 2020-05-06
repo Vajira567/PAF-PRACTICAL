@@ -39,7 +39,7 @@ public class paymentService {
 	@Path("/")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
-	public String insertPayment(@FormParam("p_id")  int paymentID,@FormParam("p_type") String paymentType,@FormParam("p_amount") Double paymentAmount,@FormParam("appointment_id") int appointmentID ){
+	public String insertPayment(@FormParam("p_id")  String paymentID,@FormParam("p_type") String paymentType,@FormParam("p_amount") String paymentAmount,@FormParam("appointment_id") String appointmentID ){
 		
 		String output = paymentObj.insertPayment(paymentID, paymentType, paymentAmount, appointmentID);
 				

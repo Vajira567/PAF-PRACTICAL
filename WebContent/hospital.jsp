@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="com.java.hospital" %>
+<%@page import="com.servlet.hospitalAPI" %>
     
     
 <%	
-	if (request.getParameter("Hospital_Name") != null) {
+	if (request.getParameter("Hospital_ID") != null) {
 		hospital Hospital = new hospital();
 		String
 		stsMsg = "";
@@ -15,6 +16,7 @@
 
      	if (request.getParameter("hidHospitalIDSave") == "") {
 			stsMsg = Hospital.insertHospital(
+					request.getParameter("Hospital_ID"),
 					request.getParameter("Hospital_Name"),
 					request.getParameter("Hospital_Address"), 
 					request.getParameter("Hospital_City"),

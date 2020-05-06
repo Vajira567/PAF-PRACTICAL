@@ -34,7 +34,7 @@ public class adminService {
 	@Path("/admin") 
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
 	@Produces(MediaType.TEXT_PLAIN) 
-	public String insertAdmin(@FormParam("Admin_ID") int Admin_ID,
+	public String insertAdmin(@FormParam("Admin_ID") String Admin_ID,
 			                @FormParam("Admin_Name") String Admin_Name,
 							@FormParam("Admin_Gender") String Admin_Gender,    
 							@FormParam("Admin_Address") String Admin_Address,       
@@ -59,7 +59,7 @@ public class adminService {
 		JsonObject adminObject = new JsonParser().parse(AdminData).getAsJsonObject(); 
 		 
 		 //Read the values from the JSON object  
-	    int Admin_ID = adminObject.get("(Admin_ID").getAsInt();
+		String Admin_ID = adminObject.get("(Admin_ID").getAsString();
 		String Admin_Name = adminObject.get("Admin_Name").getAsString();  
 		String Admin_Gender = adminObject.get("Admin_Gender").getAsString();  
 		String Admin_Address = adminObject.get("Admin_Address").getAsString();  
