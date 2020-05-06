@@ -169,8 +169,8 @@ public class doctor {
 	   output = "Updated successfully";   
 	   }   catch (Exception e)   {    
 		   
-		  
-		   output = "Error while updating the Hospitals.";    
+		  output = "{\"status\":\"error\", \"data\":     \"Error while updating the Dotors.\"}";
+		    
 		   System.err.println(e.getMessage());   
 	   } 
 	 
@@ -202,7 +202,10 @@ public class doctor {
 
 	  output = "Deleted successfully";  
 	  }  catch (Exception e)  {   
-		  output = "Sorry , Error while deleting the doctors details.";   
+		  
+		  output = "{\"status\":\"error\", \"data\":     \"Sorry , Error while deleting the doctors details.\"}";
+		 
+		  
 		  System.err.println(e.getMessage());  
 		  
 	 } 

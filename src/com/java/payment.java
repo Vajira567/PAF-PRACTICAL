@@ -44,6 +44,9 @@ connect DbObj = new connect();
 				//execute the statement   
 				preparedStmt.execute();   
 				con.close(); 
+				
+				String newPayment = readPayment(); output = "{\"status\":\"success\", \"data\": \"" +    newPayment + "\"}"; 
+
 
 				output = "Inserted successfully";
 			}
@@ -152,6 +155,8 @@ connect DbObj = new connect();
 		   // execute the statement    
 		   preparedStmt.execute();    
 		   con.close(); 
+		   
+		   String newPayment = readPayment(); output = "{\"status\":\"success\", \"data\": \"" +    newPayment + "\"}"; 
 		 
 		   output = "Updated successfully";   
 		   }   catch (Exception e)   {    
@@ -182,6 +187,8 @@ connect DbObj = new connect();
 		     
 		  preparedStmt.execute();   
 		  con.close(); 
+		  
+		  String newPayment = readPayment(); output = "{\"status\":\"success\", \"data\": \"" +    newPayment + "\"}"; 
 		 
 		  output = "Deleted successfully";  
 		  }  catch (Exception e)  {   
