@@ -163,9 +163,14 @@ public class hospital {
 		   preparedStmt.execute();    
 		   con.close(); 
 		 
+		   String newHospital = readHospitals(); output = "{\"status\":\"success\", \"data\": \"" +    newHospital + "\"}"; 
+
 		   output = "Updated successfully";   
-		   }   catch (Exception e)   {    
-			   output = "Error while updating the Hospitals.";    
+		   }   catch (Exception e)   {  
+			   
+		    	output = "{\"status\":\"error\", \"data\":     \"Error while updating the Hospitals.\"}";
+
+			    
 			   System.err.println(e.getMessage());   
 		   } 
 		 
@@ -193,9 +198,14 @@ public class hospital {
 		  preparedStmt.execute();   
 		  con.close(); 
 		 
+		  String newHospital = readHospitals(); output = "{\"status\":\"success\", \"data\": \"" +    newHospital + "\"}"; 
+
 		  output = "Deleted successfully";  
-		  }  catch (Exception e)  {   
-			  output = "Sorry , Error while deleting the hospital.";   
+		  }  catch (Exception e)  {  
+			  
+			  output = "{\"status\":\"error\", \"data\":     \"Sorry , Error while deleting the hospital.\"}";
+
+			  
 			  System.err.println(e.getMessage());  
 			  
 		 } 

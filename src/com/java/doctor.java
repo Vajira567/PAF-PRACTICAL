@@ -114,11 +114,16 @@ public class doctor {
 			//execute the statement   
 			preparedStmt.execute();   
 			con.close(); 
+      
+			String newDoctor = readDoctors(); output = "{\"status\":\"success\", \"data\": \"" +    newDoctor + "\"}"; 
 
 			output = "Inserted successfully";
 		}
-		catch (Exception e) {   
-			output = "Error while inserting the doctors.";   
+		catch (Exception e) { 
+			
+			output = "{\"status\":\"error\", \"data\":     \"Error while inserting the doctors.\"}";
+
+			 
 			System.err.println(e.getMessage());  
 		} 
 
@@ -159,8 +164,12 @@ public class doctor {
 	   preparedStmt.execute();    
 	   con.close(); 
 	 
+	   String newDoctor = readDoctors(); output = "{\"status\":\"success\", \"data\": \"" +    newDoctor + "\"}"; 
+
 	   output = "Updated successfully";   
 	   }   catch (Exception e)   {    
+		   
+		  
 		   output = "Error while updating the Hospitals.";    
 		   System.err.println(e.getMessage());   
 	   } 
@@ -189,6 +198,8 @@ public class doctor {
 	  preparedStmt.execute();   
 	  con.close(); 
 	 
+	  String newDoctor = readDoctors(); output = "{\"status\":\"success\", \"data\": \"" +    newDoctor + "\"}"; 
+
 	  output = "Deleted successfully";  
 	  }  catch (Exception e)  {   
 		  output = "Sorry , Error while deleting the doctors details.";   
