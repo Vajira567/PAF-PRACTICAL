@@ -97,15 +97,21 @@ connect DbObj = new connect();
 					
 					  
 
-//					   // buttons    
-					  output += "<td><input name=\"btnUpdate\" "     + " "
+//					   // buttons   
+					  output  += "<td><input name='btnUpdate' type='button' value='Update' "
+								+ "class='btnUpdate btn btn-secondary'></td>" + "<td><input name='btnRemove' type='button' value='Remove'"
+										+ " class='btnRemove btn btn-danger' data-paymentid= '" + paymentID + "'>" + "</td></tr>";
+
+					  
+					  
+					/*  output += "<td><input name=\"btnUpdate\" "     + " "
 						  		+ "type=\"button\" value=\"Update\" class='btnUpdate btn btn-secondary'></td>"     + ""
 						  				+ "<td><form method=\"post\" action=\"payment.jsp\">"     + ""
 						  						+ "<input name=\"btnRemove\" "     + " "
 						  								+ "type=\"submit\" value=\"Remove\" class='btnRemove btn btn-danger'>"     + ""
 						  										+ "<input name=\"hidPaymentIDDelete\" type=\"hidden\" "     + " "
 						  												+ "value=\"" + 
-						  												paymentID + "\">" + "</form></td></tr>";   
+						  												paymentID + "\">" + "</form></td></tr>";   */
 					  } 
 
 					  con.close(); 

@@ -5,7 +5,7 @@
     
     
 <%	
-	if (request.getParameter("paymentID") != null) {
+	if (request.getParameter("Admin_ID") != null) {
 		admin obj = new admin();
 		String
 		stsMsg = "";

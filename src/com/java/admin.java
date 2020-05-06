@@ -50,11 +50,14 @@ public class admin {
 			//execute the statement   
 			preparedStmt.execute();   
 			con.close(); 
+			
+			String newAdmin = readAdmin(); output = "{\"status\":\"success\", \"data\": \"" +    newAdmin + "\"}"; 
 
 			output = "Inserted successfully";
 		}
-		catch (Exception e) {   
-			output = "Error while inserting the Admin Details.";   
+		catch (Exception e) {  
+			output = "{\"status\":\"error\", \"data\":     \"Error while inserting the Admin details.\"}";
+		   
 			System.err.println(e.getMessage());  
 		} 
 
@@ -112,15 +115,13 @@ public class admin {
 		  
 
 //		   // buttons    
+		  
+			output  += "<td><input name='btnUpdate' type='button' value='Update' "
+					+ "class='btnUpdate btn btn-secondary'></td>" + "<td><input name='btnRemove' type='button' value='Remove'"
+							+ " class='btnRemove btn btn-danger' data-adminid= '" + Admin_ID + "'>" + "</td></tr>";
 
-		  output += "<td><input name=\"btnUpdate\" "     + " "
-			  		+ "type=\"button\" value=\"Update\" class='btnUpdate btn btn-secondary'></td>"     + ""
-			  				+ "<td><form method=\"post\" action=\"admin.jsp\">"     + ""
-			  						+ "<input name=\"btnRemove\" "     + " "
-			  								+ "type=\"submit\" value=\"Remove\" class='btnRemove btn btn-danger'>"     + ""
-			  										+ "<input name=\"hidAdminIDDelete\" type=\"hidden\" "     + " "
-			  												+ "value=\"" + 
-			  												Admin_ID + "\">" + "</form></td></tr>";   
+		 
+			  										
 		  } 
 		  con.close(); 
 
@@ -166,10 +167,15 @@ public class admin {
 	   // execute the statement    
 	   preparedStmt.execute();    
 	   con.close(); 
+	   
+	   String newAdmin = readAdmin(); output = "{\"status\":\"success\", \"data\": \"" +    newAdmin + "\"}"; 
+
 	 
 	   output = "Updated successfully";   
 	   }   catch (Exception e)   {    
-		   output = "Error while updating the admin details.";    
+		   
+		   output = "{\"status\":\"error\", \"data\":     \"Error while updating the admin details.\"}";
+		     
 		   System.err.println(e.getMessage());   
 	   } 
 	 
@@ -197,10 +203,17 @@ public class admin {
 	     
 	  preparedStmt.execute();   
 	  con.close(); 
+	  
+	  String newAdmin = readAdmin(); output = "{\"status\":\"success\", \"data\": \"" +    newAdmin + "\"}"; 
+
 	 
 	  output = "Deleted successfully";  
 	  }  catch (Exception e)  {   
-		  output = "Sorry , Error while deleting the admin details.";   
+		  
+		  output = "{\"status\":\"error\", \"data\":     \"Sorry , Error while deleting the admin details.\"}";
+		     
+
+		   
 		  System.err.println(e.getMessage());  
 		  
 	 } 
