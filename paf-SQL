@@ -1,0 +1,43 @@
+CREATE TABLE `admin` (
+  `Admin_ID` INT NOT NULL,
+  `Admin_Name` VARCHAR(45) NOT NULL,
+  `Admin_Gender` VARCHAR(45) NOT NULL,
+  `Admin_Address` VARCHAR(45) NOT NULL,
+  `Admin_Password` VARCHAR(45) NOT NULL,
+  `Admin_Phone` INT NOT NULL,
+  `Admin_Email` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Admin_ID`)
+  );
+
+CREATE TABLE `doctors` (
+  `DoctorID` INT NOT NULL,
+  `DoctorName` VARCHAR(45) NOT NULL,
+  `NIC` VARCHAR(45) NOT NULL,
+  `DepartmentName` VARCHAR(45) NOT NULL,
+  `Address` VARCHAR(45) NOT NULL,
+  `MobileNo` INT NOT NULL,
+  `Email` VARCHAR(45) NOT NULL,
+  `Specialization` VARCHAR(45) NOT NULL,
+  `HospitalName` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`DoctorID`)
+  );
+
+CREATE TABLE `hospitals` (
+  `Hospital_ID` INT NOT NULL,
+  `Hospital_Name` VARCHAR(45) NOT NULL,
+  `Hospital_Address` VARCHAR(45) NOT NULL,
+  `Hospital_City` VARCHAR(45) NOT NULL,
+  `Hospital_Phone` VARCHAR(45) NOT NULL,
+  `Hospital_Email` VARCHAR(45) NOT NULL,
+  `Hospital_Description` VARCHAR(45) NOT NULL,
+  `Open_Hours` INT NOT NULL,
+  PRIMARY KEY (`Hospital_ID`)
+  );
+
+CREATE TABLE `payment` (
+  `paymentID` INT NOT NULL,
+  `paymentType` VARCHAR(45) NOT NULL,
+  `paymentAmount` DOUBLE NOT NULL,
+  `appointmentID` INT NOT NULL,
+  PRIMARY KEY (`paymentID`)
+  );
